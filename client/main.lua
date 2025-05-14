@@ -46,12 +46,12 @@ Citizen.CreateThread(function()
 					SetEntityMaxSpeed(vehicle, GetVehicleHandlingFloat(vehicle,"CHandlingData","fInitialDriveMaxFlatVel"))
 					ESX.ShowNotification(_U('cruiser_off'))
 				elseif not cruiserOn then
-					if kmh >= Config.minimalCrusierSpeed then
+					if kmh >= Config.MinimalCrusierSpeed then
 						cruiserOn = true
 						SetEntityMaxSpeed(vehicle, vehicleSpeed)
 						ESX.ShowNotification(_U('crusier_on', ESX.Math.Round(kmh)))
 					else
-						ESX.ShowNotification(_U('not_required_speed', Config.minimalCrusierSpeed))
+						ESX.ShowNotification(_U('not_required_speed', Config.MinimalCrusierSpeed))
 					end
 				end
 			else
