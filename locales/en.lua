@@ -1,4 +1,5 @@
 Locales['en'] = {
+	['car_menu'] = 'Car Menu',
 	['engine'] = 'Engine',
 	['open_close'] = 'Open/Close',
 	['windows'] = 'Windows',
@@ -28,5 +29,27 @@ Locales['en'] = {
 	['not_required_speed'] = 'You havent reached the minimal speed for turning cruiser on, minimal speed for turning cruiser on is: %s km/h',
 	['extras'] = 'Vehicle Extras',
 	['forw_crusier_odd'] = 'Front vehicle cruiser has been set OFF',
-	['crusier_on'] = 'Front vehicle cruiser has been set ON, actual hold speed is: %s kmh'
+	['crusier_on'] = 'Front vehicle cruiser has been set ON, actual hold speed is: %s kmh',
+	['open_carmenu'] = 'Open car menu',
+	['cruisercontrol'] = 'Toggle cruiser',
+	['front_cruise_control'] = 'Toggle front vehicle cruiser',
+	['liveries'] = 'Liveries',
+	['item_extra'] = 'Extra %s',
+	['item_extra_on'] = 'ON',
+	['item_extra_off'] = 'OFF',
+	['item_livery'] = 'Livery %s'
+
+
+
+	--------------------------------------------
+	-- ['item_extras'] = 'Extras',
+	-- ['item_extras_on'] = 'Extra %s ON',
+	-- ['item_extras_off'] = 'Extra %s OFF',
+	-- ['item_extras_on_all'] = 'All extras ON',
+	-- ['item_extras_off_all'] = 'All extras OFF',
+	-- ['item_neon'] = 'Neon %s',
+	-- ['item_neon_on'] = 'Neon %s ON',
+	-- ['item_neon_off'] = 'Neon %s OFF',
+	-- ['item_neon_on_all'] = 'All neons ON',
+	-- ['item_neon_off_all'] = 'All neons OFF'
 }
