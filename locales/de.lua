@@ -28,5 +28,13 @@ Locales['de'] = {
 	['not_required_speed'] = 'Sie haben die Mindestgeschwindigkeit zum Einschalten des Tempomaten nicht erreicht. Die Mindestgeschwindigkeit zum Einschalten des Tempomaten beträgt: %s km/h',
 	['extras'] = 'Fahrzeug-Extras',
 	['forw_crusier_odd'] = 'Der Tempomat des vorderen Fahrzeugs wurde ausgeschaltet',
-	['crusier_on'] = 'Der Tempomat des vorderen Fahrzeugs wurde eingeschaltet, die tatsächliche Haltegeschwindigkeit beträgt: %s km/h'
+	['crusier_on'] = 'Der Tempomat des vorderen Fahrzeugs wurde eingeschaltet, die tatsächliche Haltegeschwindigkeit beträgt: %s km/h',
+	['open_carmenu'] = 'Fahrzeugmenü öffnen',
+	['cruisercontrol'] = 'Kreuzer umschalten',
+	['front_cruise_control'] = 'Front-Fahrzeug-Kreuzer umschalten',
+	['liveries'] = 'Aufkleber',
+	['item_extra'] = 'Extra %s',
+	['item_extra_on'] = 'Ein',
+	['item_extra_off'] = 'Aus',
+	['item_livery'] = 'Lackierung %s'
 }
