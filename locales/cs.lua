@@ -26,7 +26,15 @@ Locales['cs'] = {
 	['cruiser_off'] = 'Omezovač vypnut',
 	['crusier_on'] = 'Omezovač zapnut maximální rychlost %s km/h',
 	['not_required_speed'] = 'Nelze zapnout omezovač při tak nízké rychlosti, minimální rychlost pro zapnutí omezovače je: %s km/h',
-	['extras'] = 'Vehicle Extras',
+	['extras'] = 'Extras vozidla',
 	['forw_crusier_odd'] = 'Tempomat vypnut',
-	['crusier_on'] = 'Tempomat zapnut, aktuální udržovaná rychlost je: %s kmh'
+	['crusier_on'] = 'Tempomat zapnut, aktuální udržovaná rychlost je: %s kmh',
+	['open_carmenu'] = 'Otevřít menu vozidla',
+	['cruisercontrol'] = 'Přepnout omezovač',
+	['front_cruise_control'] = 'Přepnout tempomat',
+	['liveries'] = 'Polepy',
+	['item_extra'] = 'Extra %s',
+	['item_extra_on'] = 'ON',
+	['item_extra_off'] = 'OFF',
+	['item_livery'] = 'Polep %s'
 }
