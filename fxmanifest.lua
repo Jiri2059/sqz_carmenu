@@ -7,12 +7,13 @@ description 'SQZ Car Control'
 
 version '1.0.4'
 
-client_scripts {
+shared_scripts {
 	'locale.lua',
 	'@ox_lib/init.lua',
 	'config.lua',
     'locales/*.lua',
-	'client/*.lua',
 }
+
+client_script 'client/main.lua'
 
 server_script 'server/main.lua'
