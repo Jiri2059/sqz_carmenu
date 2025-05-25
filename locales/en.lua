@@ -38,18 +38,4 @@ Locales['en'] = {
 	['item_extra_on'] = 'ON',
 	['item_extra_off'] = 'OFF',
 	['item_livery'] = 'Livery %s'
-
-
-
-	--------------------------------------------
-	-- ['item_extras'] = 'Extras',
-	-- ['item_extras_on'] = 'Extra %s ON',
-	-- ['item_extras_off'] = 'Extra %s OFF',
-	-- ['item_extras_on_all'] = 'All extras ON',
-	-- ['item_extras_off_all'] = 'All extras OFF',
-	-- ['item_neon'] = 'Neon %s',
-	-- ['item_neon_on'] = 'Neon %s ON',
-	-- ['item_neon_off'] = 'Neon %s OFF',
-	-- ['item_neon_on_all'] = 'All neons ON',
-	-- ['item_neon_off_all'] = 'All neons OFF'
 }
