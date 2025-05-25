@@ -1,5 +1,5 @@
 # SQZ_CARMENU SCRIPT
-Simple CarControlMenu. You can control vehicle with simple esx_menu_default menu. There are possibilities such as turn off engine, wnidows and more.
+Simple CarControlMenu. You can control vehicle with menu. There are possibilities such as turn off engine, wnidows and more.
 
 <div align="center">
 
@@ -18,7 +18,11 @@ Simple CarControlMenu. You can control vehicle with simple esx_menu_default menu
 __You can read the docs here__
 [![Docs](https://img.shields.io/badge/docs-passing-brightgreen)](https://docs.squizer.cz)
 
-# Features 
+# Features
+- ESX/QBCore support
+- Choose from 3 menus
+- Choose from 6 types of notifications
+- Enable/disable menu items
 - Cruise Control
 - Speed Limiter
 - Vehicle extras
@@ -29,10 +33,13 @@ __You can read the docs here__
 - Manage liveries
 - Turn off/on lights
 
+## Requirements
+- ox_lib (https://github.com/overextended/ox_lib/releases)
+
 ## Instalation
  1) Put it into your FiveM resources folder
- 2) Put `start sqz_carmenu` to your server.cfg or whatever you use
- 3) Edit in Config file All you want
+ 2) Put `ensure sqz_carmenu` to your server.cfg or whatever you use
+ 3) Edit in Config file everything you want
  
 # Issues
 In case of any issues, let me know, you have 2 ways. You can create a GitHub issue or event you can join our Discord server and let me know in the Discord server.
@@ -40,9 +47,9 @@ In case of any issues, let me know, you have 2 ways. You can create a GitHub iss
 2) Provide repro steps how can I reproduce that issue
 
 ## Requirements
- - esx_menu_default (and things related to)
+ - ox_lib (https://github.com/overextended/ox_lib/releases)
  - If you would like to use czech language you should add font supporting Czech characters (Open Sans)
- - es_extended and things related to it
+ - es_extended/QBCore and things related to it
 
 # Other Scripts made by Squizer
 * [sqz_anticheat](https://forum.cfx.re/t/anticheat-revolutionary-anticheat/4802102) - Higly effective cheap FiveM anticheat
