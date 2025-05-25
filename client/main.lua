@@ -135,79 +135,79 @@ if Config.Framework == 'esx' then
 									}
 								end
 							end
+							local carMenuItems = {}
+							if Config.MenuItems.EngineToggle then
+								carMenuItems[#carMenuItems + 1] = {
+									label = _U('engine'),
+									  icon = 'power-off',
+									  onSelect = function()
+										if motor then
+											motor = false
+											SetVehicleEngineOn(vehicle, false, false, false)
+										elseif not motor then
+											motor = true
+											SetVehicleEngineOn(vehicle, true, false, false)
+										end
+										while (motor == false) do
+											SetVehicleUndriveable(vehicle,true)
+											Wait(0)
+										end
+									  end
+								}
+							end
+							if Config.MenuItems.NeonLightsToggle then
+								carMenuItems[#carMenuItems + 1] = {
+									label = _U('neons'),
+									icon = 'bolt',
+									onSelect = function()
+										if neons then
+											neons = false
+											DisableVehicleNeonLights(vehicle, false, false, false)
+										elseif not neons then
+											neons = true
+											DisableVehicleNeonLights(vehicle, true, false, false)
+										end	
+									end
+								}
+							end
+							if Config.MenuItems.Extras then
+								carMenuItems[#carMenuItems + 1] = {
+									label = _U('extras'),
+									icon = 'plus',
+									menu = 'menu_extras',
+								}
+							end
+							if Config.MenuItems.Liveries then
+								carMenuItems[#carMenuItems + 1] = {
+									label = _U('liveries'),
+									icon = 'palette',
+									menu = 'menu_liveries',
+								}
+							end
+							if Config.MenuItems.Doors then
+								carMenuItems[#carMenuItems + 1] = {
+									label = _U('open_close'),
+									icon = 'door-open',
+									menu = 'menu_open_close'
+								}
+							end
+							if Config.MenuItems.Windows then
+								carMenuItems[#carMenuItems + 1] = {
+									label = _U('windows'),
+									icon = 'window-maximize',
+									menu = 'menu_windows'
+								}
+							end
+							if Config.MenuItems.Lights then
+								carMenuItems[#carMenuItems + 1] = {
+									label = _U('lights'),
+									icon = 'lightbulb',
+									menu = 'menu_lights'
+								}
+							end
 							lib.registerRadial({
 						  		id = 'car_menu',
-						  		items = {
-									if Config.MenuItems.EngineToggle then
-										{
-											label = _U('engine'),
-							  				icon = 'power-off',
-							  				onSelect = function()
-												if motor then
-													motor = false
-													SetVehicleEngineOn(vehicle, false, false, false)
-												elseif not motor then
-													motor = true
-													SetVehicleEngineOn(vehicle, true, false, false)
-												end
-												while (motor == false) do
-													SetVehicleUndriveable(vehicle,true)
-													Wait(0)
-												end
-							  				end
-										},
-									end,
-									if Config.MenuItems.NeonLightsToggle then
-										{
-											label = _U('neons'),
-											icon = 'bolt',
-											onSelect = function()
-												if neons then
-													neons = false
-													DisableVehicleNeonLights(vehicle, false, false, false)
-												elseif not neons then
-													neons = true
-													DisableVehicleNeonLights(vehicle, true, false, false)
-												end	
-											end
-										},
-									end,
-									if Config.MenuItems.Extras then
-										{
-											label = _U('extras'),
-											icon = 'plus',
-											menu = 'menu_extras',
-										},
-									end,
-									if Config.MenuItems.Liveries then
-										{
-											label = _U('liveries'),
-											icon = 'palette',
-											menu = 'menu_liveries',
-										},
-									end,
-									if Config.MenuItems.Doors then
-										{
-											label = _U('open_close'),
-											icon = 'door-open',
-											menu = 'menu_open_close'
-										},
-									end,
-									if Config.MenuItems.Windows then
-										{
-											label = _U('windows'),
-											icon = 'window-maximize',
-											menu = 'menu_windows'
-										},
-									end,
-									if Config.MenuItems.Lights then
-										{
-											label = _U('lights'),
-											icon = 'lightbulb',
-											menu = 'menu_lights'
-										},
-									end,
-						  		}
+						  		items = carMenuItems
 							})
 
 							if Config.MenuItems.Extras then
@@ -505,80 +505,80 @@ if Config.Framework == 'esx' then
 		local hood = false
 
 		if Config.Menu == 'ox_context' then
+			local carMenuItems1 = {}
+			if Config.MenuItems.EngineToggle then
+				carMenuItems1[#carMenuItems1 + 1] = {
+					title = _U('engine'),
+					icon = 'power-off',
+					onSelect = function()
+						if motor then
+							motor = false
+							SetVehicleEngineOn(vehicle, false, false, false)
+						elseif not motor then
+							motor = true
+							SetVehicleEngineOn(vehicle, true, false, false)
+						end
+						while (motor == false) do
+							SetVehicleUndriveable(vehicle,true)
+							Wait(0)
+						end
+					end,
+				}
+			end
+			if Config.MenuItems.NeonLightsToggle then
+				carMenuItems1[#carMenuItems1 + 1] = {
+					title = _U('neons'),
+					icon = 'bolt',
+					onSelect = function()
+						if neons then
+							neons = false
+							DisableVehicleNeonLights(vehicle, false, false, false)
+						elseif not neons then
+							neons = true
+							DisableVehicleNeonLights(vehicle, true, false, false)
+						end	
+					end,
+				}
+			end
+			if Config.MenuItems.Extras then
+				carMenuItems1[#carMenuItems1 + 1] = {
+					title = _U('extras'),
+					menu = 'menu_extras',
+					icon = 'plus'
+				}
+			end
+			if Config.MenuItems.Liveries then
+				carMenuItems1[#carMenuItems1 + 1] = {
+					title = _U('liveries'),
+					menu = 'menu_liveries',
+					icon = 'palette'
+				}
+			end
+			if Config.MenuItems.Doors then
+				carMenuItems1[#carMenuItems1 + 1] = {
+					title = _U('open_close'),
+					menu = 'menu_open_close',
+					icon = 'door-open'
+				}
+			end
+			if Config.MenuItems.Windows then
+				carMenuItems1[#carMenuItems1 + 1] = {
+					title = _U('windows'),
+					menu = 'menu_windows',
+					icon = 'window-maximize'
+				}
+			end
+			if Config.MenuItems.Lights then
+				carMenuItems1[#carMenuItems1 + 1] = {
+					title = _U('lights'),
+					menu = 'menu_lights',
+					icon = 'lightbulb'
+				}
+			end
 			lib.registerContext({
 				id = 'car_menu',
 				title = _U('car_menu'),
-				options = {
-					if Config.MenuItems.EngineToggle then
-						{
-							title = _U('engine'),
-							icon = 'power-off',
-							onSelect = function()
-								if motor then
-									motor = false
-									SetVehicleEngineOn(vehicle, false, false, false)
-								elseif not motor then
-									motor = true
-									SetVehicleEngineOn(vehicle, true, false, false)
-								end
-								while (motor == false) do
-									SetVehicleUndriveable(vehicle,true)
-									Wait(0)
-								end
-							end,
-						},
-					end,
-					if Config.MenuItems.NeonLightsToggle then
-						{
-							title = _U('neons'),
-							icon = 'bolt',
-							onSelect = function()
-								if neons then
-									neons = false
-									DisableVehicleNeonLights(vehicle, false, false, false)
-								elseif not neons then
-									neons = true
-									DisableVehicleNeonLights(vehicle, true, false, false)
-								end	
-							end,
-						},
-					end,
-					if Config.MenuItems.Extras then
-						{
-							title = _U('extras'),
-							menu = 'menu_extras',
-							icon = 'plus'
-						},
-					end,
-					if Config.MenuItems.Liveries then
-						{
-							title = _U('liveries'),
-							menu = 'menu_liveries',
-							icon = 'palette'
-						},
-					end,
-					if Config.MenuItems.Doors then
-						{
-							title = _U('open_close'),
-							menu = 'menu_open_close',
-							icon = 'door-open'
-						},
-					end,
-					if Config.MenuItems.Windows then
-						{
-							title = _U('windows'),
-							menu = 'menu_windows',
-							icon = 'window-maximize'
-						},
-					end,
-					if Config.MenuItems.Lights then
-						{
-							title = _U('lights'),
-							menu = 'menu_lights',
-							icon = 'lightbulb'
-						},
-					end,
-				}
+				options = carMenuItems1
 			})
 	
 			local extrasOptions = {}
@@ -910,33 +910,33 @@ if Config.Framework == 'esx' then
         		})
 		    end
 
+			local carMenuItems2 = {}
+			if Config.MenuItems.EngineToggle then
+				carMenuItems2[#carMenuItems2 + 1] = {label = _U('engine'), icon = 'power-off'}
+			end
+			if Config.MenuItems.NeonLightsToggle then
+				carMenuItems2[#carMenuItems2 + 1] = {label = _U('neons'), icon = 'bolt'}
+			end
+			if Config.MenuItems.Extras then
+				carMenuItems2[#carMenuItems2 + 1] = {label = _U('extras'), icon = 'plus', values = extrasOptions}
+			end
+			if Config.MenuItems.Liveries then
+				carMenuItems2[#carMenuItems2 + 1] = {label = _U('liveries'), icon = 'palette', values = liveryOptions}
+			end
+			if Config.MenuItems.Doors then
+				carMenuItems2[#carMenuItems2 + 1] = {label = _U('open_close'), icon = 'door-open', values = {_U('fronleftdoors'), _U('frontrightdoors'), _U('backleftdoors'), _U('backrightdoors'), _U('alldoorsopen'), _U('alldoorsclose'), _U('trunk'), _U('hood')}}
+			end
+			if Config.MenuItems.Windows then
+				carMenuItems2[#carMenuItems2 + 1] = {label = _U('windows'), icon = 'window-maximize', values = {_U('leftfrontwindows'), _U('rightfrontwindows'), _U('leftbackwindow'), _U('rightbackwindow'), _U('windowsdown'), _U('windowsup')}}
+			end
+			if Config.MenuItems.Lights then
+				carMenuItems2[#carMenuItems2 + 1] = {label = _U('lights'), icon = 'lightbulb', values = {_U('interiorlights'), _U('frontlights')}}
+			end
 			lib.registerMenu({
 				id = 'car_menu',
 				title = _U('car_menu'),
 				position = Config.ox_menuPosition,
-				options = {
-					if Config.MenuItems.EngineToggle then
-						{label = _U('engine'), icon = 'power-off'},
-					end,
-					if Config.MenuItems.NeonLightsToggle then
-						{label = _U('neons'), icon = 'bolt'},
-					end,
-					if Config.MenuItems.Extras then
-						{label = _U('extras'), icon = 'plus', values = extrasOptions},
-					end,
-					if Config.MenuItems.Liveries then
-						{label = _U('liveries'), icon = 'palette', values = liveryOptions},
-					end,
-					if Config.MenuItems.Doors then
-						{label = _U('open_close'), icon = 'door-open', values = {_U('fronleftdoors'), _U('frontrightdoors'), _U('backleftdoors'), _U('backrightdoors'), _U('alldoorsopen'), _U('alldoorsclose'), _U('trunk'), _U('hood')}},
-					end,
-					if Config.MenuItems.Windows then
-						{label = _U('windows'), icon = 'window-maximize', values = {_U('leftfrontwindows'), _U('rightfrontwindows'), _U('leftbackwindow'), _U('rightbackwindow'), _U('windowsdown'), _U('windowsup')}},
-					end,
-					if Config.MenuItems.Lights then
-						{label = _U('lights'), icon = 'lightbulb', values = {_U('interiorlights'), _U('frontlights')}},
-					end,
-				}
+				options = carMenuItems2
 			}, function(selected, scrollIndex, args)
 				print(selected, scrollIndex, args)
 				if selected == 1 then
@@ -1283,79 +1283,79 @@ elseif Config.Framework == 'qb' then
 									}
 								end
 							end
+							local carMenuItems = {}
+							if Config.MenuItems.EngineToggle then
+								carMenuItems[#carMenuItems + 1] = {
+									label = _U('engine'),
+									  icon = 'power-off',
+									  onSelect = function()
+										if motor then
+											motor = false
+											SetVehicleEngineOn(vehicle, false, false, false)
+										elseif not motor then
+											motor = true
+											SetVehicleEngineOn(vehicle, true, false, false)
+										end
+										while (motor == false) do
+											SetVehicleUndriveable(vehicle,true)
+											Wait(0)
+										end
+									  end
+								}
+							end
+							if Config.MenuItems.NeonLightsToggle then
+								carMenuItems[#carMenuItems + 1] = {
+									label = _U('neons'),
+									icon = 'bolt',
+									onSelect = function()
+										if neons then
+											neons = false
+											DisableVehicleNeonLights(vehicle, false, false, false)
+										elseif not neons then
+											neons = true
+											DisableVehicleNeonLights(vehicle, true, false, false)
+										end	
+									end
+								}
+							end
+							if Config.MenuItems.Extras then
+								carMenuItems[#carMenuItems + 1] = {
+									label = _U('extras'),
+									icon = 'plus',
+									menu = 'menu_extras',
+								}
+							end
+							if Config.MenuItems.Liveries then
+								carMenuItems[#carMenuItems + 1] = {
+									label = _U('liveries'),
+									icon = 'palette',
+									menu = 'menu_liveries',
+								}
+							end
+							if Config.MenuItems.Doors then
+								carMenuItems[#carMenuItems + 1] = {
+									label = _U('open_close'),
+									icon = 'door-open',
+									menu = 'menu_open_close'
+								}
+							end
+							if Config.MenuItems.Windows then
+								carMenuItems[#carMenuItems + 1] = {
+									label = _U('windows'),
+									icon = 'window-maximize',
+									menu = 'menu_windows'
+								}
+							end
+							if Config.MenuItems.Lights then
+								carMenuItems[#carMenuItems + 1] = {
+									label = _U('lights'),
+									icon = 'lightbulb',
+									menu = 'menu_lights'
+								}
+							end
 							lib.registerRadial({
 						  		id = 'car_menu',
-						  		items = {
-									if Config.MenuItems.EngineToggle then
-										{
-											label = _U('engine'),
-							  				icon = 'power-off',
-							  				onSelect = function()
-												if motor then
-													motor = false
-													SetVehicleEngineOn(vehicle, false, false, false)
-												elseif not motor then
-													motor = true
-													SetVehicleEngineOn(vehicle, true, false, false)
-												end
-												while (motor == false) do
-													SetVehicleUndriveable(vehicle,true)
-													Wait(0)
-												end
-							  				end
-										},
-									end,
-									if Config.MenuItems.NeonLightsToggle then
-										{
-											label = _U('neons'),
-											icon = 'bolt',
-											onSelect = function()
-												if neons then
-													neons = false
-													DisableVehicleNeonLights(vehicle, false, false, false)
-												elseif not neons then
-													neons = true
-													DisableVehicleNeonLights(vehicle, true, false, false)
-												end	
-											end
-										},
-									end,
-									if Config.MenuItems.Extras then
-										{
-											label = _U('extras'),
-											icon = 'plus',
-											menu = 'menu_extras',
-										},
-									end,
-									if Config.MenuItems.Liveries then
-										{
-											label = _U('liveries'),
-											icon = 'palette',
-											menu = 'menu_liveries',
-										},
-									end,
-									if Config.MenuItems.Doors then
-										{
-											label = _U('open_close'),
-											icon = 'door-open',
-											menu = 'menu_open_close'
-										},
-									end,
-									if Config.MenuItems.Windows then
-										{
-											label = _U('windows'),
-											icon = 'window-maximize',
-											menu = 'menu_windows'
-										},
-									end,
-									if Config.MenuItems.Lights then
-										{
-											label = _U('lights'),
-											icon = 'lightbulb',
-											menu = 'menu_lights'
-										},
-									end,
-						  		}
+						  		items = carMenuItems
 							})
 
 							if Config.MenuItems.Extras then
@@ -1653,80 +1653,80 @@ elseif Config.Framework == 'qb' then
 		local hood = false
 
 		if Config.Menu == 'ox_context' then
+			local carMenuItems1 = {}
+			if Config.MenuItems.EngineToggle then
+				carMenuItems1[#carMenuItems1 + 1] = {
+					title = _U('engine'),
+					icon = 'power-off',
+					onSelect = function()
+						if motor then
+							motor = false
+							SetVehicleEngineOn(vehicle, false, false, false)
+						elseif not motor then
+							motor = true
+							SetVehicleEngineOn(vehicle, true, false, false)
+						end
+						while (motor == false) do
+							SetVehicleUndriveable(vehicle,true)
+							Wait(0)
+						end
+					end,
+				}
+			end
+			if Config.MenuItems.NeonLightsToggle then
+				carMenuItems1[#carMenuItems1 + 1] = {
+					title = _U('neons'),
+					icon = 'bolt',
+					onSelect = function()
+						if neons then
+							neons = false
+							DisableVehicleNeonLights(vehicle, false, false, false)
+						elseif not neons then
+							neons = true
+							DisableVehicleNeonLights(vehicle, true, false, false)
+						end	
+					end,
+				}
+			end
+			if Config.MenuItems.Extras then
+				carMenuItems1[#carMenuItems1 + 1] = {
+					title = _U('extras'),
+					menu = 'menu_extras',
+					icon = 'plus'
+				}
+			end
+			if Config.MenuItems.Liveries then
+				carMenuItems1[#carMenuItems1 + 1] = {
+					title = _U('liveries'),
+					menu = 'menu_liveries',
+					icon = 'palette'
+				}
+			end
+			if Config.MenuItems.Doors then
+				carMenuItems1[#carMenuItems1 + 1] = {
+					title = _U('open_close'),
+					menu = 'menu_open_close',
+					icon = 'door-open'
+				}
+			end
+			if Config.MenuItems.Windows then
+				carMenuItems1[#carMenuItems1 + 1] = {
+					title = _U('windows'),
+					menu = 'menu_windows',
+					icon = 'window-maximize'
+				}
+			end
+			if Config.MenuItems.Lights then
+				carMenuItems1[#carMenuItems1 + 1] = {
+					title = _U('lights'),
+					menu = 'menu_lights',
+					icon = 'lightbulb'
+				}
+			end
 			lib.registerContext({
 				id = 'car_menu',
 				title = _U('car_menu'),
-				options = {
-					if Config.MenuItems.EngineToggle then
-						{
-							title = _U('engine'),
-							icon = 'power-off',
-							onSelect = function()
-								if motor then
-									motor = false
-									SetVehicleEngineOn(vehicle, false, false, false)
-								elseif not motor then
-									motor = true
-									SetVehicleEngineOn(vehicle, true, false, false)
-								end
-								while (motor == false) do
-									SetVehicleUndriveable(vehicle,true)
-									Wait(0)
-								end
-							end,
-						},
-					end,
-					if Config.MenuItems.NeonLightsToggle then
-						{
-							title = _U('neons'),
-							icon = 'bolt',
-							onSelect = function()
-								if neons then
-									neons = false
-									DisableVehicleNeonLights(vehicle, false, false, false)
-								elseif not neons then
-									neons = true
-									DisableVehicleNeonLights(vehicle, true, false, false)
-								end	
-							end,
-						},
-					end,
-					if Config.MenuItems.Extras then
-						{
-							title = _U('extras'),
-							menu = 'menu_extras',
-							icon = 'plus'
-						},
-					end,
-					if Config.MenuItems.Liveries then
-						{
-							title = _U('liveries'),
-							menu = 'menu_liveries',
-							icon = 'palette'
-						},
-					end,
-					if Config.MenuItems.Doors then
-						{
-							title = _U('open_close'),
-							menu = 'menu_open_close',
-							icon = 'door-open'
-						},
-					end,
-					if Config.MenuItems.Windows then
-						{
-							title = _U('windows'),
-							menu = 'menu_windows',
-							icon = 'window-maximize'
-						},
-					end,
-					if Config.MenuItems.Lights then
-						{
-							title = _U('lights'),
-							menu = 'menu_lights',
-							icon = 'lightbulb'
-						},
-					end,
-				}
+				options = carMenuItems1
 			})
 	
 			local extrasOptions = {}
@@ -2058,33 +2058,33 @@ elseif Config.Framework == 'qb' then
         		})
 		    end
 
+			local carMenuItems2 = {}
+			if Config.MenuItems.EngineToggle then
+				carMenuItems2[#carMenuItems2 + 1] = {label = _U('engine'), icon = 'power-off'}
+			end
+			if Config.MenuItems.NeonLightsToggle then
+				carMenuItems2[#carMenuItems2 + 1] = {label = _U('neons'), icon = 'bolt'}
+			end
+			if Config.MenuItems.Extras then
+				carMenuItems2[#carMenuItems2 + 1] = {label = _U('extras'), icon = 'plus', values = extrasOptions}
+			end
+			if Config.MenuItems.Liveries then
+				carMenuItems2[#carMenuItems2 + 1] = {label = _U('liveries'), icon = 'palette', values = liveryOptions}
+			end
+			if Config.MenuItems.Doors then
+				carMenuItems2[#carMenuItems2 + 1] = {label = _U('open_close'), icon = 'door-open', values = {_U('fronleftdoors'), _U('frontrightdoors'), _U('backleftdoors'), _U('backrightdoors'), _U('alldoorsopen'), _U('alldoorsclose'), _U('trunk'), _U('hood')}}
+			end
+			if Config.MenuItems.Windows then
+				carMenuItems2[#carMenuItems2 + 1] = {label = _U('windows'), icon = 'window-maximize', values = {_U('leftfrontwindows'), _U('rightfrontwindows'), _U('leftbackwindow'), _U('rightbackwindow'), _U('windowsdown'), _U('windowsup')}}
+			end
+			if Config.MenuItems.Lights then
+				carMenuItems2[#carMenuItems2 + 1] = {label = _U('lights'), icon = 'lightbulb', values = {_U('interiorlights'), _U('frontlights')}}
+			end
 			lib.registerMenu({
 				id = 'car_menu',
 				title = _U('car_menu'),
 				position = Config.ox_menuPosition,
-				options = {
-					if Config.MenuItems.EngineToggle then
-						{label = _U('engine'), icon = 'power-off'},
-					end,
-					if Config.MenuItems.NeonLightsToggle then
-						{label = _U('neons'), icon = 'bolt'},
-					end,
-					if Config.MenuItems.Extras then
-						{label = _U('extras'), icon = 'plus', values = extrasOptions},
-					end,
-					if Config.MenuItems.Liveries then
-						{label = _U('liveries'), icon = 'palette', values = liveryOptions},
-					end,
-					if Config.MenuItems.Doors then
-						{label = _U('open_close'), icon = 'door-open', values = {_U('fronleftdoors'), _U('frontrightdoors'), _U('backleftdoors'), _U('backrightdoors'), _U('alldoorsopen'), _U('alldoorsclose'), _U('trunk'), _U('hood')}},
-					end,
-					if Config.MenuItems.Windows then
-						{label = _U('windows'), icon = 'window-maximize', values = {_U('leftfrontwindows'), _U('rightfrontwindows'), _U('leftbackwindow'), _U('rightbackwindow'), _U('windowsdown'), _U('windowsup')}},
-					end,
-					if Config.MenuItems.Lights then
-						{label = _U('lights'), icon = 'lightbulb', values = {_U('interiorlights'), _U('frontlights')}},
-					end,
-				}
+				options = carMenuItems2
 			}, function(selected, scrollIndex, args)
 				print(selected, scrollIndex, args)
 				if selected == 1 then
@@ -2300,6 +2300,6 @@ end
 
 
 Wait(500)
-RegisterKeyMapping('carmenu', Locale('open_carmenu'), 'keyboard', Config.OpenCarMenu)
-RegisterKeyMapping('cruisercontrol', Locale('cruise_control'), 'keyboard', Config.CruiserControl)
-RegisterKeyMapping('frontcruisercontrol', Locale('front_cruise_control'), 'keyboard', Config.FrontCruiseSpeedControl)
+RegisterKeyMapping('carmenu', _U('open_carmenu'), 'keyboard', Config.OpenCarMenu)
+RegisterKeyMapping('cruisercontrol', _U('cruise_control'), 'keyboard', Config.CruiserControl)
+RegisterKeyMapping('frontcruisercontrol', _U('front_cruise_control'), 'keyboard', Config.FrontCruiseSpeedControl)
